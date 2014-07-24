@@ -25,7 +25,7 @@ if not os.path.exists(FILES_DIR):
 def create_geogist():
     _remove_expired_files()
 
-    data = request.form.keys()[0]
+    data = request.form['contents']
     gistid = _generate_gistid()
     with open(_filename_from_gistid(gistid), 'w') as f:
         f.write(data)
